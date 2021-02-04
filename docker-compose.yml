@@ -66,7 +66,7 @@ services:
       - TZ=${TZ} # timezone, defined in .env
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${ROOT}/config/sonarr:/config # config files
+      - ${ROOT_EDGE}/config/sonarr:/config # config files
       - ${ROOT}/complete/tv:/tv # tv shows folder
       - ${ROOT}/downloads:/downloads # download folder
 
@@ -81,7 +81,7 @@ services:
       - TZ=${TZ} # timezone, defined in .env
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${ROOT}/config/radarr:/config # config files
+      - ${ROOT_EDGE}/config/radarr:/config # config files
       - ${ROOT}/complete/movies:/movies # movies folder
       - ${ROOT}/downloads:/downloads # download folder
 
@@ -93,7 +93,7 @@ services:
       - TZ=${TZ} # timezone, defined in .env
     network_mode: host
     volumes:
-      - ${ROOT}/config/plex/db:/config # plex database
+      - ${ROOT_EDGE}/config/plex/db:/config # plex database
       - ${ROOT}/config/plex/transcode:/transcode # temp transcoded files
       - ${ROOT}/complete:/data # media library
 
